@@ -1,2 +1,0 @@
-# adek
-first repository
