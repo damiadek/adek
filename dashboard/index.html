@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Poka Bet | Dashboard</title>
+	<link rel="icon" href="../assets/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- fund wallet modal -->
+    <div id="fund_wallet" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" style="color:#555;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Fund Wallet</h4>
+              </div>
+              <div class="modal-body text-center">
+                <!-- fund wallet form -->
+                <form id="fund_form">
+                    <div class="form-group">
+                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="number" required="required" name="cvv2" placeholder="Enter CVV2 number">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="number" required="required" name="cardno" placeholder="Enter card number">
+                    </div>
+                    <div class="form-group">
+                        Expiry Date:
+                        <!-- month list -->
+                        <select name="mm" id="month_list">
+                        </select>
+                        <!-- year list -->
+                        <select name="yyyy" id="year_list">
+                        </select>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning" id="submit_email">Fund</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- withdraw from wallet modal -->
+    <div id="withdraw_wallet" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" style="color:#555;">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Withdraw From Wallet</h4>
+              </div>
+              <div class="modal-body text-center">
+                <!-- withdraw from wallet form -->
+                <form id="withdraw_form">
+                    <div class="form-group">
+                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount you wish to withdraw">
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning" id="submit_email">Withdraw</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn fa fa-chevron-up" id="doc_arrow"></button>
+    <div class='load_cover'><i><i></i></i></div>
+    <nav class="navbar navbar-default navbar-fixed-top _m" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page_scroll" href="#landing">
+                <img src="../assets/img/logo.png" width="150px" height="auto">
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
+            <li>
+                <a href="../profile" class="tip" data-toggle="tooltip" data-placement="bottom" title="profile">
+                    <img class="img-thumbnail" style="padding:0;" width="30px" height="30px" src="../assets/img/avatar3.jpg">
+                    Profile
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="tip" data-toggle="tooltip" data-placement="bottom" title="notifications">
+                    <span class="fa fa-bell"></span> Notifications
+                    <span class="fa fa-caret-down"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">You have 3 notifications!</li>
+                    <li class="divider"></li>
+                    <li><a href="#"><span class="label label-warning"><i class="fa fa-futbol-o"></i></span> You have 3 new bets</a></li>
+                    <li><a href="#"><span class="label label-primary"><i class="fa fa-user"></i></span> You have 1 new friend request</a></li>
+                    <li><a href="#"><span class="label label-warning"><i class="fa fa-futbol-o"></i></span> There are 3 new sport bets</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            	<a href="#" class="tip" data-toggle="tooltip" data-placement="bottom" title="wallet">
+                    <span class="fa fa-briefcase"></span> Wallet
+                    <span class="fa fa-caret-down"></span>
+        		</a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="dropdown-header"><b>Wallet</b> : <span id="balance">N78,227.00k</span></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-toggle="modal" data-target="#fund_wallet">Fund</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#withdraw_wallet">Withdraw</a></li>
+                </ul>
+        	</li>
+            <li>
+                <a href="../home" class="tip" data-toggle="tooltip" data-placement="bottom" title="logout">
+                    <span class="fa fa-power-off"></span> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="side-nav wrapper">
+        <div class="side-nav header">
+            <img width="100px" class="img-thumbnail" height="100px" src="../assets/img/avatar3.jpg">
+            <br>
+            <small> damiadek</small>
+        </div>
+        <ul class="side-nav">
+            <li class="active"><a href="#" title="Dashboard"><span class="fa fa-home"></span>Dashboard</a></li>
+            <li><a href="../profile" title="Profile"><span class="fa fa-user"></span>Profile</a></li>
+            <li><a href="#" title="Friends"><span class="fa fa-users"></span>Friends</a></li>
+            <li><a href="#" title="Sports Bets"><span class="fa fa-futbol-o"></span>Bets</a></li>
+            <li><a href="#" title="Leaderboard"><span class="fa fa-sitemap"></span>Leaderboard</a></li>
+            <button title="compress/expand" class="btn btn-warning fa fa-angle-double-left pull-right"></button>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+    	<div class="row">
+            <div class="page-title col-xs-12">
+                <h3>Dashboard</h3>
+                <div class="page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="../home">Home</a></li>
+                        <li class="active"><b>Dashboard</b></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="page-wrapper col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="panel panel-white">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-7 latest_sports">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            Latest sports
+                                        </h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="slimscroll">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Lakers</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Chicago Bulls</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                    <div class="sport_item">
+                                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                                            vs
+                                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                                        <button class="btn btn-warning btn-sm">Bet now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-5 leaderboard">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">Leaderboard</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="slimscroll">
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar2.jpg" class="img-circle" width="40px" height="40px">
+                                                <p class="username">johndoe</p>
+                                                <p>California, US</p>
+                                                <span>3003 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar3.jpg" class="img-circle" width="40px" height="40px">
+                                                <p class="username">edgarphil</p>
+                                                <p>Cairo, Egypt</p>
+                                                <span>2994 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                            <div class="leaderboard_item" id="user-id">
+                                                <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
+                                                <p class="username">damiadek</p>
+                                                <p>Lagos, Nigeria</p>
+                                                <span>3445 points</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="panel panel-white">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Latest Results</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="slimscroll">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                            <div class="result_item">
+                                                <b><i class="fa fa-android"></i> Real Madrid FC <span class="result">0</span></b>
+                                                    vs
+                                                <b><span class="result">0</span> <i class="fa fa-futbol-o"></i> Barcelona FC </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+        <div class="row foot" id="contact">
+            <div class="col-md-12">
+                <span class="pull-left">
+                Powered By
+                <img src="../assets/img/logo.png" height="30px">
+                </span>
+                <span class="pull-right">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x tw-icon"></i>
+                      <i class="fa fa-twitter fa-stack-1x tw-icon"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x fb-icon"></i>
+                      <i class="fa fa-facebook fa-stack-1x fb-icon"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x text-danger"></i>
+                      <i class="fa fa-google-plus fa-stack-1x text-danger"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x text-primary"></i>
+                      <i class="fa fa-linkedin fa-stack-1x text-primary"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+	<script src="../assets/plugins/jquery/jquery.easing.min.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="../assets/plugins/datatables/js/jquery.datatables.js"></script>
+	<script src="../assets/js/library.js"></script>
+	<script src="../assets/js/functions.js"></script>
+	<script src="../assets/js/ui.js"></script>
+	<script src="../assets/js/pages/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Poka Bet | Home</title>
+	<link rel="icon" href="../assets/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
+</head>
+<body style="padding-left:0;">
+    <div class='load_cover'><i><i></i></i></div>
+    <button class="btn fa fa-chevron-up" id="doc_arrow"></button>
+    <nav class="navbar navbar-fixed-top _n" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page_scroll" href="#landing">
+                <img src="../assets/img/logo.png" width="150px" height="auto">
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right navbar-collapse collapse home_links">
+            <li><a href="#l_board" class="page_scroll">Leaderboard</a></li>
+            <li><a href="#bet" class="page_scroll">Sport Bets</a></li>
+            <li><a href="#contact" class="page_scroll">Contact</a></li>
+            <li><a href="#" class="login_toggle">Login</a></li>
+        </ul>
+    </nav>
+    <div id="reset_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form id="reset_form">
+                <div class="modal-content" style="color:#555;">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reset Password</h4>
+                  </div>
+                  <div class="modal-body text-center">
+                    <div id="form_field">
+                        <input class="form-control" type="email" required="required" id="forgotten_password" name="email" placeholder="Enter Email Address">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                    <button type="submit" class="btn btn-warning" id="submit_email">Submit</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+	<div class="landing_div" id="landing">
+		<div class="row login">
+			<span class="pull-right login_toggle">&times;</span>
+			<div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+				<form id="login_form">
+					<fieldset>
+						<legend>
+							<span class="text-warning">Sign In </span>
+						 	<small>or with </small>
+							<a class="fa-stack fa-sm">
+							  <i class="fa fa-square-o fa-stack-2x tw-icon"></i>
+							  <i class="fa fa-twitter fa-stack-1x tw-icon"></i>
+							</a>
+							<small>or</small>
+							<a class="fa-stack fa-sm">
+							  <i class="fa fa-square-o fa-stack-2x fb-icon"></i>
+							  <i class="fa fa-facebook fa-stack-1x fb-icon"></i>
+							</a>
+						</legend>
+						<div class="alert message"></div>
+						<div class="form-group">
+							<label for="email">Email address / Username</label>
+							<input type="text" class="form-control" id="email" name="email" required="required" placeholder="johndoe@gmail.com">
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" id="password" name="password" required="required" placeholder="******">
+						</div>
+						<br>
+						<button class="btn btn-warning btn-block">Login</button>
+						lost or forgot password? click <a href="#" data-toggle="modal" data-target="#reset_modal">here</a>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="row slide">
+			<div class="col-md-12">
+				<img src="../assets/img/bg_1.png" width="100%" height="auto" id="bg_1">
+				<img src="../assets/img/bg_2.jpg" width="100%" height="auto" id="bg_2">
+				<img src="../assets/img/bg_3.jpg" width="100%" height="auto" id="bg_3">
+				<div class="row cover">
+					<div class="col-sm-12 col-md-9 title">
+						<br>
+						<br>
+						<span class="main text"><span>3</span> easy steps</span>
+						<ul>
+							<li><img src="../assets/img/check.png" class="tick" width="20px"> Create an account</li>
+							<li><img src="../assets/img/check.png" class="tick" width="20px"> Choose your game of interest</li>
+							<li><img src="../assets/img/check.png" class="tick" width="20px"> Place your bet</li>
+						</ul>
+					</div>
+					<div class="col-sm-12 col-md-3 register">
+						<form>
+							<fieldset>
+								<legend class="text-default">
+									<strong class="text-warning">Register </strong>
+								</legend>
+								<div class="alert message"></div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="username" name="username" required="required" placeholder="Username">
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" id="email" name="email" required="required" placeholder="Email Address">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" id="password" name="password" required="required" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" id="confirm_password" name="confirm_password" required="required" placeholder="Confirm Password">
+								</div>
+								<input type="checkbox" required="required">
+								I accept the <a href="#"> terms and conditions </a>
+								<br>
+								<button class="btn btn-warning btn-block" id="reg" >REGISTER</button>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row m_desc_steps">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-sm-12 col-md-4">
+						<i class="fa fa-child fa-5x text-danger"></i>
+						<h3>Create Bet</h3>
+						<h4>Create a bet and bet against your own opponent(s)</h4>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<i class="fa fa-tags fa-5x text-danger"></i>
+						<h3>Join a sport bet</h3>
+						<h4>Search for and join open bets</h4>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<i class="fa fa-users fa-5x text-danger"></i>
+						<h3>Meet Friends</h3>
+						<h4>Search and meet new friends</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row l_wrap" id="l_board">
+			<div class="col-md-12">
+				<div class="row">
+					<h1>Leaderboard</h1>
+					<br><br><br>
+					<div class="col-sm-12 col-md-4 leader_item">
+						<img src="../assets/img/avatar1.png" width="120px" height="120px" class="img-circle img-thumbnail">
+						<div class="details">
+							<h4><b>damiadek</b></h4>
+							<h5>Lagos, Nigeria</h5>
+							<h5>3445 points</h5>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 leader_item">
+						<img src="../assets/img/avatar2.jpg" width="120px" height="120px" class="img-circle img-thumbnail">
+						<div class="details">
+							<h4><b>johndoe</b></h4>
+							<h5>California, US</h5>
+							<h5>3003 points</h5>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 leader_item">
+						<img src="../assets/img/avatar3.jpg" width="120px" height="120px" class="img-circle img-thumbnail">
+						<div class="details">
+							<h4><b>edgarphil</b></h4>
+							<h5>Cairo, Egypt</h5>
+							<h5>2994 points</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row sports_wrap" id="bet">
+			<div class="col-md-12">
+				<div class="row">
+					<h1>Recent Sports</h1>
+					<br><br><br>
+					<div class="col-sm-12">
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+						<div class="sport_item">
+							<i class="fa fa-android"></i> <b>Real Madrid FC</b>
+								vs
+							<i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+							<button class="btn btn-warning btn-sm">Bet now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row home_foot" id="contact">
+			<div class="col-md-12">
+				<span class="pull-left">
+				Powered By
+				<img src="../assets/img/logo.png" height="30px">
+				</span>
+				<span class="pull-right">
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-square-o fa-stack-2x tw-icon"></i>
+					  <i class="fa fa-twitter fa-stack-1x tw-icon"></i>
+					</span>
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-square-o fa-stack-2x fb-icon"></i>
+					  <i class="fa fa-facebook fa-stack-1x fb-icon"></i>
+					</span>
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-square-o fa-stack-2x text-danger"></i>
+					  <i class="fa fa-google-plus fa-stack-1x text-danger"></i>
+					</span>
+					<span class="fa-stack fa-lg">
+					  <i class="fa fa-square-o fa-stack-2x text-primary"></i>
+					  <i class="fa fa-linkedin fa-stack-1x text-primary"></i>
+					</span>
+				</span>
+			</div>
+		</div>
+
+	</div>
+	<script src="../assets/plugins/jquery/jquery.min.js"></script>
+	<script src="../assets/plugins/jquery/jquery.easing.min.js"></script>
+	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/plugins/datatables/js/jquery.datatables.js"></script>
+    <script src="../assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="../assets/js/library.js"></script>
+	<script src="../assets/js/functions.js"></script>
+	<script src="../assets/js/ui.js"></script>
+	<script src="../assets/js/pages/home.js"></script>
+</body>
+</html>
