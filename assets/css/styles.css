@@ -409,7 +409,7 @@ nav,
 /*side navigation*/
 .side-nav.wrapper{
 	margin-left: 0px;
-	position: absolute;
+	position: fixed;
 	float: left;
 	left: 0;
 	width: 200px;
@@ -419,7 +419,7 @@ nav,
 	padding: 0;
 	text-align: left;
 	transition: all .1s;
-	z-index: 9;
+	z-index: 1000;
 }
 .side-nav.wrapper > .side-nav.header{
 	text-align: center;
@@ -453,13 +453,13 @@ nav,
 	position: relative;
 }
 .side-nav.wrapper > ul > button{
-	position: absolute;
+	/*position: absolute;*/
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 18px!important;
+	width: 50px!important;
 	outline: none;
-	padding: 2px;
+	/*padding: 2px;*/
 	background: transparent;
 	color: transparent;
 	transition: all 1s;
@@ -467,7 +467,7 @@ nav,
 	border: none;
 	box-shadow: none;
 }
-.side-nav.wrapper > ul:hover > button{
+.side-nav.wrapper:hover > ul > button{
 	color: #fff;
 	background: rgba(0,0,0,0.15);
 	background: -webkit-linear-gradient(left, transparent , rgba(0,0,0,0.25));
@@ -475,13 +475,13 @@ nav,
 	background: -moz-linear-gradient(right, transparent , rgba(0,0,0,0.25));
 	background: linear-gradient(to right, transparent , rgba(0,0,0,0.25));
 }
-/*.side-nav.wrapper > ul:hover > button{
-	animation: zoomInOut infinite 4s;
-	-webkit-animation: zoomInOut infinite 4s;
-}*/
-.side-nav.wrapper > ul:hover > button:hover,
-.side-nav.wrapper > ul:hover > button:focus,
-.side-nav.wrapper > ul:hover > button:active{
+.side-nav.wrapper:hover > ul > button{
+	animation: pulse infinite 4s;
+	-webkit-animation: pulse infinite 4s;
+}
+.side-nav.wrapper:hover > ul > button:hover,
+.side-nav.wrapper:hover > ul > button:focus,
+.side-nav.wrapper:hover > ul > button:active{
 	animation: none;
 	background: rgba(0,0,0,0.3);
 	background: -webkit-linear-gradient(left, transparent , rgba(0,0,0,0.3));

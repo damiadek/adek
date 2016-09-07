@@ -49,7 +49,7 @@ function smoothScroll(link){
 // set container height to body height
 function setHeight(){
 	var body_height = $(window).innerHeight();
-	$(".page-wrapper, .side-nav.wrapper").css("height", body_height);
+	$(".page-wrapper, .side-nav.wrapper").css("min-height", body_height);
 }
 
 // navbar color function
