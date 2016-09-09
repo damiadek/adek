@@ -21,4 +21,8 @@ $(document).ready(function(){
 		setHeight();
 	});
 
+	$("#toggle_search").click(function(){
+		$(".search").toggleClass("open");
+	});
+
 });
