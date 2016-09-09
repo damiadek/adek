@@ -12,10 +12,10 @@ $(document).ready(function(){
 	$("ul.side-nav").children("button").click(function(){
 		$(this).toggleClass("fa-angle-double-left").toggleClass("fa-angle-double-right");
 		var nav = $(".side-nav.wrapper");
-		var position = nav.css("position");
 		var padding = parseInt($("body").css("padding-left"));
-		if (position === "relative") {
-			padding == 200 ? $('body').css({"padding-left" : "50px"}) : $('body').css({"padding-left" : "200px"});
+		var window_width = $(window).innerWidth();
+		if (window_width > 610 ) {
+			padding == 200 ? $('body').css({"padding-left" : "60px"}) : $('body').css({"padding-left" : "200px"});
 		}
 		nav.toggleClass("compressed");
 		setHeight();

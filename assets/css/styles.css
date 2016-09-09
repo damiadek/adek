@@ -47,7 +47,7 @@ body{
 	overflow-x: hidden;
 	background: #962D0F;
 	font-family: maiandra GD, "Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding-left: 50px;
+	padding-left: 60px;
 }
 .navbar a{
 	transition: background 1s;
@@ -247,12 +247,15 @@ nav,
 	color: #33A3DD;
 }
 
+#reset_modal{
+	z-index: 1300;
+}
 /*login*/
 .landing_div .login{
 	position: fixed!important;
 	top: -200%;
 	left: 0;
-	padding-top: 20vh;
+	padding-top: 20px;
 	right: 0;
 	z-index: 1200;
 	background: rgba(244,244,244,0.8);
@@ -276,16 +279,15 @@ nav,
 	text-decoration: none;
 	transform: scale(1.05);
 }
-.landing_div .login > span{
-	position: absolute;
-	top: 50px;
-	right: 50px;
+.landing_div .login .login_toggle{
+	margin-top: 10px;
+	margin-right: 20px;
 	color: rgba(0,0,0,0.3);
-	font-size: 50px;
+	font-size: 20px;
 	cursor: pointer;
 	transition: color .4s;
 }
-.landing_div .login > span:hover{
+.landing_div .login .login_toggle:hover{
 	color: rgba(0,0,0,0.6);
 }
 .alert.message{
@@ -409,11 +411,10 @@ nav,
 /*side navigation*/
 .side-nav.wrapper{
 	margin-left: 0px;
-	position: fixed;
-	float: left;
+	position: absolute;
 	left: 0;
 	width: 200px;
-	height: 100vh;
+	min-height: 100vh;
 	padding-top: 150px;
 	background: #962D0F;
 	padding: 0;
@@ -460,29 +461,26 @@ nav,
 	width: 50px!important;
 	outline: none;
 	/*padding: 2px;*/
-	background: transparent;
-	color: transparent;
-	transition: all 1s;
+	background: rgba(0,0,0,0.15);
+	background: -webkit-linear-gradient(left, transparent , rgba(0,0,0,0.25));
+	background: -o-linear-gradient(right, transparent , rgba(0,0,0,0.25));
+	background: -moz-linear-gradient(right, transparent , rgba(0,0,0,0.25));
+	background: linear-gradient(to right, transparent , rgba(0,0,0,0.25));
+	transition: all 1s ease-in-out;
 	border-radius: 0;
 	border: none;
 	box-shadow: none;
 }
 .side-nav.wrapper:hover > ul > button{
 	color: #fff;
-	background: rgba(0,0,0,0.15);
-	background: -webkit-linear-gradient(left, transparent , rgba(0,0,0,0.25));
-	background: -o-linear-gradient(right, transparent , rgba(0,0,0,0.25));
-	background: -moz-linear-gradient(right, transparent , rgba(0,0,0,0.25));
-	background: linear-gradient(to right, transparent , rgba(0,0,0,0.25));
 }
 .side-nav.wrapper:hover > ul > button{
-	animation: pulse infinite 4s;
-	-webkit-animation: pulse infinite 4s;
+	animation: stretch infinite 1s;
+	-webkit-animation: stretch 1s infinite ;
 }
 .side-nav.wrapper:hover > ul > button:hover,
 .side-nav.wrapper:hover > ul > button:focus,
 .side-nav.wrapper:hover > ul > button:active{
-	animation: none;
 	background: rgba(0,0,0,0.3);
 	background: -webkit-linear-gradient(left, transparent , rgba(0,0,0,0.3));
 	background: -o-linear-gradient(right, transparent , rgba(0,0,0,0.3));
@@ -523,12 +521,13 @@ nav,
 	display: inline block;
 	font-size: 20px;
 	padding: 10px;
+	padding-left: 15px;
 }
 
 /*compressed nav*/
 .side-nav.wrapper.compressed{
 	margin-left: 0px;
-	width: 50px;
+	width: 60px;
 	transition: all .1s;
 }
 .side-nav.wrapper.compressed > .side-nav.header {
@@ -633,6 +632,182 @@ span.result{
 	cursor: pointer;
 }
 
+/*profile*/
+.profile-image{
+	position: relative;
+	padding: 0;
+	transition: opacity .4s ease-in-out;
+}
+.profile-image > .edit_cover{
+	position: absolute;
+	background: rgba(0,0,0,0.2);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	cursor: pointer;
+}
+.profile-image > .edit_cover:hover > i{
+	color: rgba(255,255,255,0.6);
+}
+.profile-image:hover{
+	opacity: .9;
+}
+.profile-image > .edit_cover > i{
+	color: rgba(255,255,255,0.7);
+	position: relative;
+	margin-top: 40%;
+	transition: color .4s ease-in-out;
+}
+.profile-details{
+	padding: 20px;
+}
+.profile-details  .input-group{
+	margin-bottom: 20px;
+}
+.profile-details  button{
+	margin-left: 10px;
+}
+
+/*search friends*/
+.search{
+	position: fixed;
+	z-index: 1020;
+	width: 250px;
+	right: -255px;
+	height: 100vh;
+	top: 0vh;
+	background: white;
+	padding: 10px;
+	padding-top: 20vh;
+	box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
+	transition: right .2s;
+}
+.input-group-addon{
+	cursor: pointer;
+}
+.search.open{
+	right: 0px;
+}
+.search_child{
+	overflow-y: auto;
+	height: 85%;
+	padding-bottom: 2px;
+}
+.search > i:active,
+.search > i:focus,
+.search > i:hover,
+.search > i{
+	border-right: 1px dashed #eee;
+	position: absolute;
+	top: 20vh;
+	width: 50px;
+	left: -50px;
+	background: white;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 10px;
+	box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
+}
+.found_item{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: relative;
+	border-bottom: dashed #ccc 1px;
+}
+.found_item img{
+	float: left;
+	margin-right: 10px;
+}
+.found_item .username{
+	font-weight: bold;
+	margin-bottom: 0px;
+	color: #999;
+}
+.found_item .location{
+	font-size: 12px;
+	font-weight: lighter;
+	margin-bottom: 0;
+}
+.found_item i{
+	color: #BF350D;
+	position: absolute;
+	right: 5px;
+	top: 15px;
+}
+.found_item i:hover{
+	cursor: pointer;
+	color: #962D0F;
+}
+
+/*friends list*/
+.request_item,
+.friend_item{
+	float: left;
+	display: block;
+	width: 100%;
+	padding: 5px;
+}
+.request_item > *:not(i) ,
+.friend_item > *:not(i) {
+	float: left;
+}
+.request_item > *:not(img) ,
+.friend_item > *:not(img) {
+    vertical-align: middle;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+}
+.request_item > img{
+	margin-right: 2%;
+}
+.friend_item > img{
+	margin-right: 5%;
+}
+.request_item > .location{
+	color: #ccc;
+}
+.request_item > .username{
+	margin-right: 10%;
+}
+.friend_item > .username{
+	margin-right: 30%;
+}
+.request_item > i,
+.friend_item > i{
+	float: right;
+	font-style: normal;
+	opacity: .05;
+	cursor: pointer;
+	margin-right: 10px;
+	transition: opacity .4s;
+}
+.request_item:hover,
+.friend_item:hover{
+	background: rgba(0,0,0,0.03);
+}
+.request_item:hover > i,
+.friend_item:hover > i{
+	opacity: .3;
+}
+.request_item:hover > i:hover,
+.friend_item:hover > i:hover{
+	opacity: .7;
+}
+.request_item:hover > i:hover > span.fa-trash,
+.friend_item:hover > i:hover > span.fa-trash{
+	animation: wiggle .2s 2;
+	-webkit-animation: wiggle .2s 2;
+}
+
 @media (max-width: 610px){
 	.navbar .navbar-toggle {
 		border-color: #888;
@@ -693,6 +868,10 @@ span.result{
 	.landing_div .cover .title{
 		min-height: 60vh;
 	}
+	.landing_div .login > span{
+		top: 50px;
+		right: 50px;
+	}
 	.landing_div .login form{
 		padding: 30px 50px 30px 50px;
 	}
@@ -709,11 +888,10 @@ span.result{
 		padding-left: 80px;
 	}
 	.side-nav.wrapper{
-		margin-left: -200px;
-		position: relative;
+		/*margin-left: -200px;*/
 	}
 	.side-nav.wrapper.compressed{
-		margin-left: -50px;
+		/*margin-left: -50px;*/
 	}
 }
 
@@ -760,4 +938,48 @@ span.result{
     0% {transform:scale(0)}
     50% {transform:scale(1.2)}
     100% {transform:scale(1)}
+}
+@keyframes stretch{
+	0%{
+		width: 50px;
+	}
+
+	50%{
+		width: 60px;
+	}
+
+	100%{
+		width: 50px;
+	}
+}
+@-webkit-keyframes stretch{
+	0%{
+		width: 50px;
+	}
+
+	50%{
+		width: 60px;
+	}
+
+	100%{
+		width: 50px;
+	}
+}
+@keyframes wiggle{
+	0%{
+		transform: rotate(15deg);
+	}
+
+	100%{
+		transform: rotate(-10deg);
+	}
+}
+@-webkit-keyframes wiggle{
+	0%{
+		transform: rotate(15deg);
+	}
+
+	100%{
+		transform: rotate(-10deg);
+	}
 }
