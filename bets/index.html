@@ -67,7 +67,7 @@
                 <!-- withdraw from wallet form -->
                 <form id="withdraw_form">
                     <div class="form-group">
-                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount you wish to withdraw">
+                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount you wish to withdraw (in kobo)">
                     </div>
                 </form>
               </div>
@@ -92,6 +92,37 @@
                 <img src="../assets/img/logo.png" width="150px" height="auto">
             </a>
         </div>
+        <noscript>
+            <style type="text/css">
+                .load_cover{
+                    display: none;
+                }
+                noscript{
+                    background: white;
+                    position: fixed;
+                    top: 20%;
+                    width: 100%;
+                    height: 40%;
+                    text-align: center;
+                    left: 0;
+                    padding: 5% 10%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    box-shadow: 0px 2px 12px rgba(0,0,0,0.2);
+                }
+                .container-fluid{
+                    opacity: 0.5;
+                }
+                body{
+                    background: #666;
+                }
+            </style>
+            PLEASE
+            <span class="text-danger">ENABLE JAVASCRIPT</span> IN YOUR BROWSER SETTINGSS
+            OR <span class="text-danger">DISABLE SPEED MODE </span>
+            ON GOOGLE CHROME(MOBILE) OR UC BROWSER(MOBILE)
+            AND <a href="index.html">RELOAD</a> THE PAGE.
+        </noscript>
         <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
             <li>
                 <a href="../profile" class="tip" data-toggle="tooltip" data-placement="bottom" title="profile">
@@ -164,101 +195,82 @@
                         <div class="panel panel-white">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
-                                    Friends
+                                    Bet History
                                 </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="slimscroll">
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-warning">Pending</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-warning">Pending</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-warning">Pending</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-warning">Pending</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-danger">Bet Lost</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-success">Bet Won</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-success">Bet Won</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-danger">Bet Lost</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-danger">Bet Lost</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-danger">Bet Lost</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-success">Bet Won</span>
                                     </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
-                                    </div>
-                                    <div class="friend_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete friend"><span class="fa fa-trash text-danger"></span></i>
-                                        <i title="add to favorites"><span class="fa fa-star-o text-warning"></span></i>
+                                    <div class="bet_item">
+                                        <i class="fa fa-android"></i> <b>Real Madrid FC</b>
+                                            vs
+                                        <i class="fa fa-futbol-o"></i> <b>Barcelona FC</b>
+                                        <span class="label label-success">Bet Won</span>
                                     </div>
                                 </div>
                             </div>
@@ -268,132 +280,11 @@
                         <div class="panel panel-white">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
-                                    Requests
+                                    Bet Requests
                                 </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="slimscroll">
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
-                                    <div class="request_item" id="user-id">
-                                        <img src="../assets/img/avatar1.png" class="img-circle" width="40px" height="40px">
-                                        <p class="username">damiadek</p>
-                                        <p class="location">Lagos, Nigeria</p>
-                                        <i title="delete request">
-                                            <span class="fa fa-trash text-danger"></span>
-                                        </i>
-                                        <i title="accept friend">
-                                            <span class="fa fa-check text-success"></span>
-                                        </i>
-                                    </div>
                                 </div>
                             </div>
                         </div>

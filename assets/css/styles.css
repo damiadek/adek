@@ -373,6 +373,7 @@ nav,
 	top: -6px;
 }
 .result_item,
+.bet_item,
 .sport_item{
 	width: 100%;
 	text-align: left;
@@ -381,15 +382,26 @@ nav,
 	color: #999;
 	float: right;
 }
+.result_item:last-of-type,
+.bet_item:last-of-type,
+.sport_item:last-of-type{
+	border-bottom: solid 1px #eee;
+}
 .result_item{
 	border-top: none;
 }
+.bet_item b,
 .sport_item b{
 	color: #444;
 }
+.bet_item button,
 .sport_item button,
+.bet_item span,
 .sport_item span{
 	float: right;
+}
+.bet_item span{
+	width: 60px;
 }
 #bet .sport_item{
 	position: relative;
@@ -639,36 +651,72 @@ span.result{
 	padding: 0;
 	transition: opacity .4s ease-in-out;
 }
+.profile-image > img{
+	min-height: 350px;
+}
 .profile-image > .edit_cover{
 	position: absolute;
 	background: rgba(0,0,0,0.2);
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	top: 4px;
+	right: 4px;
+	bottom: 4px;
+	left: 4px;
 	text-align: center;
 	cursor: pointer;
+	padding-top: 60%;
+	display: none;
 }
-.profile-image > .edit_cover:hover > i{
-	color: rgba(255,255,255,0.6);
+.profile-image > .edit_cover:hover > span:hover{
+	color: rgba(255,255,255,1);
+	transform: scale(1.2);
+}
+.profile-image > .edit_cover:hover > span{
+	color: rgba(255,255,255,0.9);
 }
 .profile-image:hover{
 	opacity: .9;
 }
-.profile-image > .edit_cover > i{
-	color: rgba(255,255,255,0.7);
+.profile-image > .edit_cover > span{
+	margin-left: 10px;
+	color: rgba(255,255,255,1);
 	position: relative;
-	margin-top: 40%;
 	transition: color .4s ease-in-out;
+}
+.profile-image > .edit_cover:hover > span:hover > i{
+	transform: scale(1.1);
+	transition: transform .4s;
+}
+.profile-image .edit_cover{
+	transition: opacity .5s;
 }
 .profile-details{
 	padding: 20px;
 }
-.profile-details  .input-group{
+.profile-details .input-group,
+.profile-details .prev{
 	margin-bottom: 20px;
 }
-.profile-details  button{
-	margin-left: 10px;
+.profile-details label{
+	color: #aaa;
+}
+.profile-details .input-group{
+	display: none;
+}
+.profile-details .input-group.open{
+	display: table;
+}
+.profile-details input,
+.profile-details input:active,
+.profile-details input:focus{
+	border: none;
+	background: none;
+	border-bottom: solid #ccc 1px;
+	box-shadow: none;
+	outline: none;
+}
+.profile-details .input-group-addon{
+	border: none;
+	background: transparent;
 }
 
 /*search friends*/
@@ -715,6 +763,7 @@ span.result{
 	border-bottom-left-radius: 5px;
 	padding: 10px;
 	box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
+	text-align: center;
 }
 .found_item{
 	padding-top: 5px;

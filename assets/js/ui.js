@@ -101,5 +101,9 @@ $(document).ready(function(){
 });
 
 window.onload = function(){
+	var window_width = $(window).innerWidth();
+	if (window_width < 610 ) {
+		$("ul.side-nav").children("button").click();
+	}
 	hideLoading();
 }

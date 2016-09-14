@@ -67,7 +67,7 @@
                 <!-- withdraw from wallet form -->
                 <form id="withdraw_form">
                     <div class="form-group">
-                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount you wish to withdraw">
+                        <input class="form-control" type="number" required="required" name="amount" placeholder="Enter amount you wish to withdraw (in kobo)">
                     </div>
                 </form>
               </div>
@@ -92,6 +92,37 @@
                 <img src="../assets/img/logo.png" width="150px" height="auto">
             </a>
         </div>
+        <noscript>
+            <style type="text/css">
+                .load_cover{
+                    display: none;
+                }
+                noscript{
+                    background: white;
+                    position: fixed;
+                    top: 20%;
+                    width: 100%;
+                    height: 40%;
+                    text-align: center;
+                    left: 0;
+                    padding: 5% 10%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    box-shadow: 0px 2px 12px rgba(0,0,0,0.2);
+                }
+                .container-fluid{
+                    opacity: 0.5;
+                }
+                body{
+                    background: #666;
+                }
+            </style>
+            PLEASE
+            <span class="text-danger">ENABLE JAVASCRIPT</span> IN YOUR BROWSER SETTINGSS
+            OR <span class="text-danger">DISABLE SPEED MODE </span>
+            ON GOOGLE CHROME(MOBILE) OR UC BROWSER(MOBILE)
+            AND <a href="index.html">RELOAD</a> THE PAGE.
+        </noscript>
         <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
             <li>
                 <a href="#" class="tip" data-toggle="tooltip" data-placement="bottom" title="profile">
@@ -162,36 +193,57 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="row">
-                            <div class="col-sm-12 col-md-5 profile-image">
-                                <img width="100%" class="img-thumbnail img-responsive" src="../assets/img/avatar3.jpg">
-                                <div class="edit_cover"><i class="fa fa-camera fa-5x"></i><br> change image</div>
+                            <div class="col-sm-12 col-md-5 profile-image-cover">
+                                <div class="profile-image">
+                                    <img width="100%" class="img-thumbnail img-responsive" src="../assets/img/avatar3.jpg">
+                                    <div class="edit_cover">
+                                        <span class="option"><i class="fa fa-camera fa-2x" title="Choose Image" id="change"></i></span>
+                                        <span class="option"><i class="fa fa-floppy-o fa-2x" title="Save Changes" id="update"></i></span>
+                                        <span class="option"><i class="fa fa-undo fa-2x" title="Undo Changes" id="undo"></i></span>
+                                        <br>
+                                        <br>
+                                        <span id="desc"></span>
+                                    </div>
+                                </div>
+                                <br>
+                                <button class="btn btn-warning btn-block" id="toggle_change">Change Image</button>
                             </div>
                             <div class="col-sm-12 col-md-7 profile-details">
                                 <form>
                                     <fieldset>
                                         <input class="hidden" type="file" name="image" id="image">
-                                        <label for="email">Email Address</label><br>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-                                            <input class="form-control" id="email" type="email" name="email" placeholder="Enter email address" value="display_session@email.address">
-                                        </div>
+                                        <label for="email">Email Address</label>
+                                        <div class="prev"><i class="fa fa-envelope"></i> damiadek@mail.com</div>
                                         <label for="username">Username</label><br>
+                                        <div class="prev"><i class="fa fa-user"></i> <span>damiadek</span> &nbsp; <a href="#" title="edit" class="fa fa-pencil"></a></div>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                             <input class="form-control" id="username" type="text" name="username" placeholder="enter username" value="display session username">
+                                            <span class="input-group-addon after text-warning save">Save</span>
+                                            <span class="input-group-addon after cancel">Cancel</span>
                                         </div>
                                         <label for="phone">Phone Number</label><br>
+                                        <div class="prev"><i class="fa fa-mobile-phone"></i> <span>08116706425</span> &nbsp; <a href="#" title="edit" class="fa fa-pencil"></a></div>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
                                             <input class="form-control" id="phone" type="number" name="phone_number" placeholder="enter phone number" value="08116706425">
+                                            <span class="input-group-addon after text-warning save">Save</span>
+                                            <span class="input-group-addon after cancel">Cancel</span>
                                         </div>
                                         <label for="datepicker">Date Of Birth</label><br>
+                                        <div class="prev"><i class="fa fa-calendar"></i> <span>20/12/1982</span> &nbsp; <a href="#" title="edit" class="fa fa-pencil"></a></div>
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                             <input class="form-control" id="DOB" type="text" name="date_of_birth" value="display session date_of_birth">
+                                            <span class="input-group-addon after text-warning save">Save</span>
+                                            <span class="input-group-addon after cancel">Cancel</span>
                                         </div>
-                                        <button class="btn btn-warning pull-right" id="update">Update</button>
-                                        <button class="btn btn-default pull-right" type="button" id="cancel">Cancel</button>
+                                        <label for="location">Location</label><br>
+                                        <div class="prev"><i class="fa fa-map-marker"></i> <span>Lagos, Nigeria</span> &nbsp; <a href="#" title="edit" class="fa fa-pencil"></a></div>
+                                        <div class="input-group">
+                                            <input class="form-control" id="location" type="text" name="location" value="Lagos, Nigeria">
+                                            <span class="input-group-addon after text-warning save">Save</span>
+                                            <span class="input-group-addon after cancel">Cancel</span>
+                                        </div>
+                                        <!-- <button class="btn btn-warning pull-right" id="update">Update</button>
+                                        <button class="btn btn-default pull-right" type="button" id="cancel">Cancel</button> -->
                                     </fieldset>
                                 </form>
                             </div>

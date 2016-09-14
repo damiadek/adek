@@ -12,8 +12,23 @@ $(document).ready(function(){
     });
 
 	// change image
-    $(".profile-image .edit_cover").click(function(){
-    	$("#image").click();
+    $(".profile-image #change").click(function(e){
+    		$("#image").click();
+    });
+
+    // profile image options
+    $("span.option").hover(function(){
+    	$("#desc").html($(this).children("i").attr("title"));
+    },function(){
+    	$("#desc").html('');
+    });
+
+    // profile image options toggle
+    $("#toggle_change").click(function(){
+    	$(".edit_cover").fadeToggle();
+    	var text = $("#toggle_change").text();
+		$('.profile-image img').attr('src', img_src);
+    	text == "Change Image" ? $("#toggle_change").text("Cancel") : $("#toggle_change").text("Change Image");
     });
 
     // replace former image with new image
@@ -23,7 +38,6 @@ $(document).ready(function(){
 	    	var reader = new FileReader();
 
 	        reader.onload = function (e) {
-	    		$('#update').attr('disabled', true);
 	        	var image_type = input.files[0]['type'],
 	        		type = image_type.split('/')[0],
 	        		full_file_name = input.files[0]['name'],
@@ -31,7 +45,6 @@ $(document).ready(function(){
 	            	file_extension = full_file_name.split('.')[1];
 
 				if (type == 'image'){
-	    			$('#update').attr('disabled', false);
 					$('.profile-image img').attr('src', e.target.result);
 				}
 	    	};
@@ -41,16 +54,33 @@ $(document).ready(function(){
 
 	$('#update').click(function(e){
 		e.preventDefault();
+		img_src = $(".profile-image img").attr("src");
+    	$(".edit_cover").fadeOut();
 	});
-	$('#cancel').click(function(){
-		showLoading();
-		$('#update').attr('disabled', false);
+
+	$('#undo').click(function(){
 		$('.profile-image img').attr('src', img_src);
-		$("#username").val(username);
-		$("#email").val(email);
-		$("#phone").val(phone_number);
-		$("#DOB").val(DOB);
-		$("#image").val("");
-		hideLoading();
+    	$(".edit_cover").fadeOut();
+	});
+
+	$(".save").click(function(){
+		var $this = $(this);
+		$this.parent().prev().children("span").text($this.siblings("input").val());
+	});
+
+	$(".cancel").click(function(){
+		var $this = $(this);
+		var $sib = $this.siblings("input");
+		$sib.val($this.parent().prev().children("span").text());
+	});
+
+	$(".prev a").click(function(e){
+		e.preventDefault();
+		var $this = $(this);
+		$this.parent().fadeOut().next().addClass("open");
+	});
+
+	$(".input-group-addon.after").click(function(){
+		$(this).parent().removeClass("open").prev().fadeIn();
 	});
 });
