@@ -56,6 +56,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		img_src = $(".profile-image img").attr("src");
     	$(".edit_cover").fadeOut();
+		$("#toggle_change").text("Change Image");
 	});
 
 	$('#undo').click(function(){
