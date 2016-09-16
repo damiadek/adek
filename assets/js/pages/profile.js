@@ -12,8 +12,8 @@ $(document).ready(function(){
     });
 
 	// change image
-    $(".profile-image #change").click(function(e){
-    		$("#image").click();
+    $("#change").click(function(e){
+    	$("#image").click();
     });
 
     // profile image options
@@ -62,6 +62,7 @@ $(document).ready(function(){
 	$('#undo').click(function(){
 		$('.profile-image img').attr('src', img_src);
     	$(".edit_cover").fadeOut();
+		$("#toggle_change").text("Change Image");
 	});
 
 	$(".save").click(function(){

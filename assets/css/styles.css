@@ -146,10 +146,6 @@ nav,
 	opacity: 1;
 	background: transparent;
 }
-.navbar.transparent > .navbar-right > li:last-of-type > a{
-	border: solid #aaa 2px;
-	border-radius: 5px;
-}
 
 /*wallet balance*/
 #balance{
@@ -943,6 +939,15 @@ span.result{
 	.side-nav.wrapper.compressed{
 		/*margin-left: -50px;*/
 	}
+}
+.navbar > .navbar-right.home_links > li > a.login_toggle:hover,
+.navbar > .navbar-right.home_links > li > a.login_toggle,
+.navbar.transparent > .navbar-right.home_links > li > a.login_toggle:hover,
+.navbar.transparent > .navbar-right.home_links > li > a.login_toggle{
+    background-color: #f0ad4e!important;
+	border: solid #eea236 2px!important;
+	border-radius: 5px;
+	color: #fff!important;
 }
 
 /*animations*/
